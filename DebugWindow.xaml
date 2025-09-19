@@ -1,0 +1,20 @@
+﻿<Window x:Class="NotSoFitTreadmill.DebugWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NotSoFitTreadmill"
+        mc:Ignorable="d"
+        Title="Debug" Height="200" Width="200" MinWidth="200" MinHeight="200" MaxWidth="200" MaxHeight="200" Closing="Window_Closing">
+    <Grid x:Name="gridDebugWindow">
+        <Button x:Name="buttonDebugSend" Content="Send" HorizontalAlignment="Left" Margin="22,125,0,0" VerticalAlignment="Top" Width="55" Click="ButtonDebugSend_Click"/>
+        <TextBox x:Name="textBoxSpeed" HorizontalAlignment="Left" Height="23" Margin="57,12,0,0" TextWrapping="Wrap" Text="252" VerticalAlignment="Top" Width="38"/>
+        <TextBox x:Name="textBoxIncline" HorizontalAlignment="Left" Height="23" Margin="57,40,0,0" TextWrapping="Wrap" Text="252" VerticalAlignment="Top" Width="38"/>
+        <Label x:Name="labelSpeed" Content="Speed:" HorizontalAlignment="Left" Margin="11,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelIncline" Content="Incline:" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelStatus" Content="Status:" HorizontalAlignment="Left" Margin="10,67,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBoxStatus" HorizontalAlignment="Left" Height="51" Margin="57,69,0,0" TextWrapping="Wrap" Text="Ok" VerticalAlignment="Top" Width="121"/>
+        <Button x:Name="buttonDebugLoop" Content="Loop" HorizontalAlignment="Left" Margin="106,125,0,0" VerticalAlignment="Top" Width="55" Click="ButtonDebugLoop_Click"/>
+
+    </Grid>
+</Window>

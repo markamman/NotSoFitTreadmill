@@ -1,0 +1,195 @@
+﻿<Window x:Name="windowMain" x:Class="NotSoFitTreadmill.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NotSoFitTreadmill"
+        mc:Ignorable="d"
+        Title="Not-So-Fit Treadmill 2.2" MinWidth="400" MinHeight="520" MaxWidth="800" MaxHeight="1040" d:DesignWidth="400" d:DesignHeight="520" Width="400" Height="520" 
+        HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFCCD5F0" ResizeMode="CanMinimize" Icon="NotSoFitTreadmillIcon5.ico" Closing="windowMain_Closing" >
+
+    <Grid x:Name="gridMainWindow">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="65"/>
+            <RowDefinition Height="65"/>
+            <RowDefinition Height="65"/>
+            <RowDefinition Height="65"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="130"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!-- Menus -->
+
+        <DockPanel Background="#FFABADB3" HorizontalAlignment="Left">
+            <Menu DockPanel.Dock="Top" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <MenuItem x:Name="menuItemCommands" Header="Commands" Background="#FFCCD5F0" Height="20" Click="commandsMenuItem_Click">
+                    <MenuItem x:Name="menuItemOpenWorkout" Header="Open workout" Background="#FFCCD5F0" Click="openMenuItem_Click" />
+                    <MenuItem x:Name="menuItemEditWorkout" Header="Edit workout" Background="#FFCCD5F0" Click="editMenuItem_Click"/>
+                    <MenuItem x:Name="menuItemScale" Header="Window scale" Background="#FFCCD5F0">
+                        <MenuItem x:Name="menuItemScale100" Header="100 %" Background="#FFCCD5F0" Click="scaleMenuItem_Click"/>
+                        <MenuItem x:Name="menuItemScale150" Header="150 %" Background="#FFCCD5F0" Click="scaleMenuItem_Click"/>
+                        <MenuItem x:Name="menuItemScale200" Header="200 %" Background="#FFCCD5F0" Click="scaleMenuItem_Click"/>
+                    </MenuItem>
+                    <MenuItem x:Name="menuItemDeviceSelect" Header="Device select" Background="#FFCCD5F0" >
+                        <MenuItem x:Name="menuItemDevice0" Header="Device 0" Background="#FFCCD5F0" Click="deviceMenuItem_Click"/>
+                        <MenuItem x:Name="menuItemDevice1" Header="Device 1" Background="#FFCCD5F0" Click="deviceMenuItem_Click"/>
+                        <MenuItem x:Name="menuItemDevice2" Header="Device 2" Background="#FFCCD5F0" Click="deviceMenuItem_Click"/>
+                    </MenuItem>
+                    <MenuItem x:Name="menuItemVoice" Header="Voice commands" Background="#FFCCD5F0" >
+                        <MenuItem x:Name="menuItemVoiceEnabled" Header="Enabled" Background="#FFCCD5F0" Click="voiceMenuItem_Click"/>
+                        <MenuItem x:Name="menuItemVoiceDisabled" Header="Disabled" Background="#FFCCD5F0" Click="voiceMenuItem_Click"/>
+                    </MenuItem>
+                    <MenuItem x:Name="menuItemExit" Header="Exit" Background="#FFCCD5F0" Click="exitMenuItem_Click" />
+                </MenuItem>
+            </Menu>
+            <TextBox AcceptsReturn="True" />
+        </DockPanel>
+
+        <!-- Statistics display -->
+
+        <Grid x:Name="gridStatistics" HorizontalAlignment="Center" Height="65" VerticalAlignment="Center" Width="392" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="labelInclineTitle1" Content="Incline (% grade):" HorizontalAlignment="Right" Margin="0" VerticalAlignment="Center" Width="110" HorizontalContentAlignment="Right"/>
+            <Label x:Name="labelSpeedTitle1" Content="Speed (mph):" HorizontalAlignment="Right" Margin="0,0,-1,0" Grid.Row="1" VerticalAlignment="Center"/>
+            <Label x:Name="labelTimeTitle" Content="Time (hh:mm:ss):" Grid.Column="2" HorizontalAlignment="Right" Margin="0" VerticalAlignment="Center"/>
+            <Label x:Name="labelDistanceTitle" Content="Distance (miles):" Grid.Column="2" HorizontalAlignment="Right" Margin="0" Grid.Row="1" VerticalAlignment="Center"/>
+            <Label x:Name="labelInclineValue" Content="00.0" Grid.Column="1" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Foreground="Red" Width="75" VerticalContentAlignment="Center"/>
+            <Label x:Name="labelSpeedValue" Content="00.0" Grid.Column="1" HorizontalAlignment="Left" Margin="0" Grid.Row="1" VerticalAlignment="Center" Foreground="Red" FontSize="20" FontWeight="Bold" Width="75" VerticalContentAlignment="Center"/>
+            <Label x:Name="labelTimeValue" Content="00:00:00" Grid.Column="3" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Center" Foreground="Red" FontSize="20" FontWeight="Bold"/>
+            <Label x:Name="labelDistanceValue" Content="00.00" Grid.Column="3" HorizontalAlignment="Left" Margin="0" Grid.Row="1" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Foreground="Red"/>
+        </Grid>
+
+        <!-- Incline controls -->
+
+        <Grid x:Name="gridIncline" HorizontalAlignment="Center" Height="47" Margin="0,18,0,0" VerticalAlignment="Top" Width="356" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="buttonIncline1" Content="1" HorizontalAlignment="Center" Height="30" Margin="0" VerticalAlignment="Center" Width="20" Click="buttonIncline_Click"/>
+            <Button x:Name="buttonIncline2" Content="2" HorizontalAlignment="Center" Height="30" Margin="0" VerticalAlignment="Center" Width="20" Click="buttonIncline_Click" Grid.Column="1"/>
+            <Button x:Name="buttonIncline3" Content="3" HorizontalAlignment="Center" Height="30" Margin="0" VerticalAlignment="Center" Width="20" Click="buttonIncline_Click" Grid.Column="2"/>
+            <Button x:Name="buttonIncline4" Content="4" HorizontalAlignment="Center" Height="30" Margin="0" VerticalAlignment="Center" Width="20" Click="buttonIncline_Click" Grid.Column="3"/>
+            <Button x:Name="buttonIncline5" Content="5" HorizontalAlignment="Center" Height="30" Margin="0" VerticalAlignment="Center" Width="20" Click="buttonIncline_Click" Grid.Column="4"/>
+            <Button x:Name="buttonIncline6" Content="6" HorizontalAlignment="Center" Height="30" Margin="0" VerticalAlignment="Center" Width="20" Click="buttonIncline_Click" Grid.Column="5"/>
+            <Button x:Name="buttonIncline7" Content="7" HorizontalAlignment="Center" Height="30" Margin="0" VerticalAlignment="Center" Width="20" Click="buttonIncline_Click" Grid.Column="6"/>
+            <Button x:Name="buttonIncline8" Content="8" HorizontalAlignment="Center" Height="30" Margin="0" VerticalAlignment="Center" Width="20" Click="buttonIncline_Click" Grid.Column="7"/>
+            <Button x:Name="buttonIncline9" Content="9" HorizontalAlignment="Center" Height="30" Margin="0" VerticalAlignment="Center" Width="20" Click="buttonIncline_Click" Grid.Column="8"/>
+            <Button x:Name="buttonIncline10" Content="10" HorizontalAlignment="Center" Height="30" Margin="0" VerticalAlignment="Center" Width="20" Click="buttonIncline_Click" Grid.Column="9"/>
+            <Button x:Name="buttonIncline11" Content="11" HorizontalAlignment="Center" Height="30" Margin="0" VerticalAlignment="Center" Width="20" Click="buttonIncline_Click" Grid.Column="10"/>
+            <Button x:Name="buttonIncline12" Content="12" HorizontalAlignment="Center" Height="30" Margin="0" VerticalAlignment="Center" Width="20" Click="buttonIncline_Click" Grid.Column="11"/>
+            <Button x:Name="buttonInclineDown" Content="-" HorizontalAlignment="Center" Height="30" Margin="0" VerticalAlignment="Center" Width="20" Click="ButtonInclineDown_Click" Grid.Column="12"/>
+            <Button x:Name="buttonInclineUp" Content="+" HorizontalAlignment="Center" Height="30" Margin="0" VerticalAlignment="Center" Width="20" Click="ButtonInclineUp_Click" Grid.Column="13"/>
+        </Grid>
+        <Label x:Name="labelInclineTitle" Content="Incline (% grade)" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="-0.27,0.436" Margin="0,8,0,0" Width="98" Padding="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Row="2"/>
+
+        <!-- Speed controls -->
+
+        <Grid x:Name="gridSpeed" HorizontalAlignment="Center" Height="47" Margin="0,18,0,0" VerticalAlignment="Top" Width="356" Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="buttonSpeed1" Content="1" HorizontalAlignment="Center" Height="30" Margin="0" VerticalAlignment="Center" Width="20" Click="buttonSpeed_Click"/>
+            <Button x:Name="buttonSpeed2" Content="2" HorizontalAlignment="Center" Height="30" Margin="0" VerticalAlignment="Center" Width="20" Click="buttonSpeed_Click" Grid.Column="1"/>
+            <Button x:Name="buttonSpeed3" Content="3" HorizontalAlignment="Center" Height="30" Margin="0" VerticalAlignment="Center" Width="20" Click="buttonSpeed_Click" Grid.Column="2"/>
+            <Button x:Name="buttonSpeed4" Content="4" HorizontalAlignment="Center" Height="30" Margin="0" VerticalAlignment="Center" Width="20" Click="buttonSpeed_Click" Grid.Column="3"/>
+            <Button x:Name="buttonSpeed5" Content="5" HorizontalAlignment="Center" Height="30" Margin="0" VerticalAlignment="Center" Width="20" Click="buttonSpeed_Click" Grid.Column="4"/>
+            <Button x:Name="buttonSpeed6" Content="6" HorizontalAlignment="Center" Height="30" Margin="0" VerticalAlignment="Center" Width="20" Click="buttonSpeed_Click" Grid.Column="5"/>
+            <Button x:Name="buttonSpeed7" Content="7" HorizontalAlignment="Center" Height="30" Margin="0" VerticalAlignment="Center" Width="20" Click="buttonSpeed_Click" Grid.Column="6"/>
+            <Button x:Name="buttonSpeed8" Content="8" HorizontalAlignment="Center" Height="30" Margin="0" VerticalAlignment="Center" Width="20" Click="buttonSpeed_Click" Grid.Column="7"/>
+            <Button x:Name="buttonSpeed9" Content="9" HorizontalAlignment="Center" Height="30" Margin="0" VerticalAlignment="Center" Width="20" Click="buttonSpeed_Click" Grid.Column="8"/>
+            <Button x:Name="buttonSpeed10" Content="10" HorizontalAlignment="Center" Height="30" Margin="0" VerticalAlignment="Center" Width="20" Click="buttonSpeed_Click" Grid.Column="9"/>
+            <Button x:Name="buttonSpeedDown" Content="-" HorizontalAlignment="Center" Height="30" Margin="0" VerticalAlignment="Center" Width="20" Click="ButtonSpeedDown_Click" Grid.Column="10"/>
+            <Button x:Name="buttonSpeedUp" Content="+" HorizontalAlignment="Center" Height="30" Margin="0" VerticalAlignment="Center" Width="20" Click="ButtonSpeedUp_Click" Grid.Column="11"/>
+        </Grid>
+        <Label x:Name="labelSpeedTitle" Content="Speed (mph)  Treadmill must be running to set speed." HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="-0.27,0.436" Margin="0,8,0,0" Padding="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Row="3"/>
+
+        <!-- Mode/workout controls -->
+
+        <Grid x:Name="gridModeWorkout" HorizontalAlignment="Center" Height="65" VerticalAlignment="Center" Width="392" Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="130"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="labelMode" Content="Mode:" HorizontalAlignment="Left" Margin="20,5,0,0" Grid.Column="0" VerticalAlignment="Top" Grid.IsSharedSizeScope="True"/>
+            <Label x:Name="labelSelectedWorkout" Content="Selected workout:" HorizontalAlignment="Left" Margin="20,5,0,0" Grid.Column="1" VerticalAlignment="Top"/>
+            <ComboBox x:Name="comboBoxMode" HorizontalAlignment="Left" Height="25" Margin="20,0,0,10" Grid.Column="0" VerticalAlignment="Bottom" Width="100" SelectedIndex="0" VerticalContentAlignment="Center" Padding="10,3,4,3" SelectionChanged="comboBoxMode_SelectionChanged">
+                <ComboBoxItem Content="Manual"/>
+                <ComboBoxItem Content="Run workout"/>
+            </ComboBox>
+            <ComboBox x:Name="comboBoxSelectedWorkout" HorizontalAlignment="Left" Margin="20,0,0,10" Grid.Column="1" VerticalAlignment="Bottom" Width="215" Height="25" VerticalContentAlignment="Center" SelectedIndex="0" Padding="10,3,4,3" SelectionChanged="comboBoxSelectedWorkout_SelectionChanged">
+                <ComboBoxItem Content="Default"/>
+            </ComboBox>
+        </Grid>
+
+        <!-- Operational controls -->
+
+        <Grid x:Name="gridOperation" HorizontalAlignment="Center" Height="40" VerticalAlignment="Center" Width="360" Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="120"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="buttonStartPause" Content="Start" HorizontalAlignment="Center" Height="25" Margin="0,0,0,0" VerticalAlignment="Center" Width="100" Click="buttonStartPause_Click" Grid.Column="0"/>
+            <Button x:Name="buttonStop" Content="Stop" HorizontalAlignment="Center" Height="25" Margin="0,0,0,0" VerticalAlignment="Center" Width="100" Grid.Column="1" Click="buttonStop_Click"/>
+            <Button x:Name="buttonResetStats" HorizontalAlignment="Center" Height="25" Margin="0,0,0,0" VerticalAlignment="Center" Width="100" Grid.Column="2" Click="ButtonResetStats_Click" Content="Reset Stats"/>
+        </Grid>
+
+        <!-- Workout display -->
+
+        <Canvas x:Name="workoutDisplayCanvas" HorizontalAlignment="Center" Height="120" Grid.Row="6" VerticalAlignment="Center" Width="364" Background="Black" ClipToBounds="True"/>
+
+        <!-- Cosmetic objects -->
+
+        <Separator Height="1" VerticalAlignment="Top" Background="#FF3B4F81" Grid.Row="1" Margin="0,2,0,0"/>
+        <Separator Height="5" VerticalAlignment="Top" Background="#FF3B4F81" Grid.Row="2" Margin="0,2,0,0"/>
+        <Separator Height="1" Margin="0,64,0,0" VerticalAlignment="Top" Background="#FF3B4F81" Grid.Row="3"/>
+
+        <!-- Status bar -->
+
+        <Label x:Name="labelStatus" Content="All is good!" Grid.Row="7" VerticalAlignment="Center" Background="#FFFDFAFA" BorderBrush="#FF3B4F81" Foreground="#FF3B4F81"/>
+
+        <!-- Debug controls -->
+
+        <Button x:Name="buttonDebug" Content="Debug" HorizontalAlignment="Center" Height="24" VerticalAlignment="Center" Width="100" Grid.Row="7" Click="ButtonDebug_Click" Visibility="Hidden"/>
+
+    </Grid>
+</Window>

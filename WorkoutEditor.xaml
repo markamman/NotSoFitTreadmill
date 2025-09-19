@@ -1,0 +1,181 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NotSoFitTreadmill"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Name="windowWorkoutEditor" x:Class="NotSoFitTreadmill.WorkoutEditor"
+        mc:Ignorable="d"
+        Title="Not-So-Fit Treadmill Workout Editor" MinWidth="400" MinHeight="515" MaxWidth="800" MaxHeight="1030" d:DesignWidth="400" d:DesignHeight="515" Width="400" Height="515" 
+        HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFCCD5F0" ResizeMode="CanMinimize" Icon="NotSoFitTreadmillIcon5.ico" Closing="Window_Closing" >
+
+    <Grid x:Name="gridEditorWindow">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="265*"/>
+            <ColumnDefinition Width="129*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="65"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="65"/>
+            <RowDefinition Height="55"/>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="130"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!-- Menus -->
+
+        <DockPanel Background="#FFABADB3" HorizontalAlignment="Left">
+            <Menu DockPanel.Dock="Top" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <MenuItem x:Name="menuItemCommands" Header="Commands" Background="#FFCCD5F0" Height="20" Click="editorCommandsMenuItem_Click">
+                    <MenuItem x:Name="menuItemEditorOpenWorkout" Header="Open workout" Background="#FFCCD5F0" Click="editorOpenMenuItem_Click" />
+                    <MenuItem x:Name="menuItemEditorSaveWorkout" Header="Save workout" Background="#FFCCD5F0" Click="editorSaveMenuItem_Click"/>
+                    <MenuItem x:Name="menuItemScale" Header="Window scale" Background="#FFCCD5F0">
+                        <MenuItem x:Name="menuItemScale100" Header="100 %" Background="#FFCCD5F0" Click="scaleMenuItem_Click"/>
+                        <MenuItem x:Name="menuItemScale150" Header="150 %" Background="#FFCCD5F0" Click="scaleMenuItem_Click"/>
+                        <MenuItem x:Name="menuItemScale200" Header="200 %" Background="#FFCCD5F0" Click="scaleMenuItem_Click"/>
+                    </MenuItem>
+                    <MenuItem x:Name="menuItemEditorExit" Header="Exit" Background="#FFCCD5F0" Click="editorExitMenuItem_Click" />
+                </MenuItem>
+            </Menu>
+            <TextBox AcceptsReturn="True" />
+        </DockPanel>
+
+        <!-- Workout data display -->
+
+        <Grid x:Name="gridStatistics" HorizontalAlignment="Center" Height="65" Margin="1,0" VerticalAlignment="Top" Width="392" Grid.Row="1" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="110"/>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="155"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="labelInclineTitle" Content="Incline (% grade):" HorizontalAlignment="Right" Margin="0" VerticalAlignment="Center" HorizontalContentAlignment="Right"/>
+            <Label x:Name="labelSpeedTitle" Content="Speed (mph):" HorizontalAlignment="Right" Margin="0" Grid.Row="1" VerticalAlignment="Center"/>
+            <Label x:Name="labelTimeTitle" Content="Workout time (hh:mm:ss):" Grid.Column="2" HorizontalAlignment="Right" Margin="0" VerticalAlignment="Center"/>
+            <Label x:Name="labelDistanceTitle" Content="Workout distance (miles):" Grid.Column="2" HorizontalAlignment="Right" Margin="0" Grid.Row="1" VerticalAlignment="Center"/>
+            <Label x:Name="labelInclineValue" Content="00.0" Grid.Column="1" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Center" FontSize="14" Foreground="Red" VerticalContentAlignment="Center" FontWeight="Bold"/>
+            <Label x:Name="labelSpeedValue" Content="00.0" Grid.Column="1" HorizontalAlignment="Left" Margin="0" Grid.Row="1" VerticalAlignment="Center" Foreground="Red" FontSize="14" VerticalContentAlignment="Center"/>
+            <Label x:Name="labelTimeValue" Content="00:00:00" Grid.Column="3" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Center" Foreground="Red" FontSize="14"/>
+            <Label x:Name="labelDistanceValue" Content="00.00" Grid.Column="3" HorizontalAlignment="Left" Margin="0" Grid.Row="1" VerticalAlignment="Center" FontSize="14" Foreground="Red"/>
+        </Grid>
+
+        <Grid x:Name="gridGroupNumber" HorizontalAlignment="Center" Height="35" Margin="100,0" VerticalAlignment="Top" Grid.Row="2" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="160"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="labelGroupNumberTitle1" Content="Details on group number:" HorizontalAlignment="Right" Margin="0" VerticalAlignment="Center" HorizontalContentAlignment="Right"/>
+            <Label x:Name="labelGroupNumberValue" Content="000" Grid.Column="1" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Center" FontSize="14" Foreground="Red" VerticalContentAlignment="Center"/>
+        </Grid>
+
+        <Grid x:Name="gridGroupStatistics" HorizontalAlignment="Center" Height="65" Margin="1,0" VerticalAlignment="Top" Width="392" Grid.Row="3" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="140"/>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition Width="130"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="labelStartTimeTitle" Content="Start time (hh:mm:ss):" HorizontalAlignment="Right" Margin="0" VerticalAlignment="Center" HorizontalContentAlignment="Right"/>
+            <Label x:Name="labelAddedTimeTitle" Content="Added time (hh:mm:ss):" HorizontalAlignment="Right" Margin="0" Grid.Row="1" VerticalAlignment="Center"/>
+            <Label x:Name="labelStartDistanceTitle" Content="Start distance (miles):" Grid.Column="2" HorizontalAlignment="Right" Margin="0" VerticalAlignment="Center"/>
+            <Label x:Name="labelAddedDistanceTitle" Content="Added distance (miles):" Grid.Column="2" HorizontalAlignment="Right" Margin="0" Grid.Row="1" VerticalAlignment="Center"/>
+            <Label x:Name="labelStartTimeValue" Content="00:00:00" Grid.Column="1" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Center" FontSize="14" Foreground="Red" VerticalContentAlignment="Center"/>
+            <Label x:Name="labelAddedTimeValue" Content="00:00:00" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Center" FontSize="14" Foreground="Red" VerticalContentAlignment="Center"/>
+            <Label x:Name="labelStartDistanceValue" Content="00.00" Grid.Column="3" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Center" FontSize="14" Foreground="Red" VerticalContentAlignment="Center"/>
+            <Label x:Name="labelAddedDistanceValue" Content="00.00" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Center" FontSize="14" Foreground="Red" VerticalContentAlignment="Center"/>
+        </Grid>
+
+        <!-- Workout controls -->
+
+        <Grid x:Name="gridModeWorkout" HorizontalAlignment="Center" Height="55" Margin="1,0" VerticalAlignment="Top" Width="392" Grid.Row="4" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="140"/>
+                <ColumnDefinition Width="140"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="labelGroupSize" HorizontalAlignment="Left" Margin="8,0,0,0" Width ="80" Grid.Column="0" VerticalAlignment="Center" Grid.IsSharedSizeScope="True">
+                <AccessText TextWrapping="Wrap" Text="Group size (seconds):"/>
+            </Label>
+            <Label x:Name="labelNumberGroups" HorizontalAlignment="Left" Margin="10,0,0,0" Width ="80" Grid.Column="1" VerticalAlignment="Center">
+                <AccessText TextWrapping="Wrap" Text="Number of groups:"/>
+            </Label>
+            <!--Label x:Name="labelGroupSize" Content="Group size (s):" HorizontalAlignment="Left" Margin="20,5,0,0" Grid.Column="0" VerticalAlignment="Top" Grid.IsSharedSizeScope="True"/-->
+            <!--Label x:Name="labelNumberGroups" Content="Number of groups:" HorizontalAlignment="Left" Margin="20,0,0,0" Grid.Column="1" VerticalAlignment="Top"/-->
+            <ComboBox x:Name="comboBoxGroupSize" HorizontalAlignment="Left" Height="25" Margin="80,0,0,0" Grid.Column="0" VerticalAlignment="Center" Width="50" SelectedIndex="0" VerticalContentAlignment="Center" Padding="10,3,4,3" SelectionChanged="comboBoxGroupSize_SelectionChanged" DropDownClosed="comboBoxGroupSize_DropDownClosed">
+                <ComboBoxItem Content="30"/>
+                <ComboBoxItem Content="60"/>
+                <ComboBoxItem Content="90"/>
+                <ComboBoxItem Content="120"/>
+                <ComboBoxItem Content="150"/>
+                <ComboBoxItem Content="180"/>
+                <ComboBoxItem Content="210"/>
+                <ComboBoxItem Content="240"/>
+                <ComboBoxItem Content="270"/>
+                <ComboBoxItem Content="300"/>
+            </ComboBox>
+            <xctk:IntegerUpDown x:Name="integerUpDownNumberGroups" HorizontalAlignment="Left" Height="31" Margin="80,0,0,0" VerticalAlignment="Center" Width="50" ValueChanged="IntegerUpDownNumberGroups_ValueChanged" Grid.Column="1" DefaultValue="120" Minimum="1" Maximum="1000" Text="" DisplayDefaultValueOnEmptyText="True" AutoSelectBehavior="Never" MouseWheelActiveTrigger="Focused" UpdateValueOnEnterKey="True"/>
+            <Button x:Name="buttonInitialize" Content="Initialize" Grid.Column="2" HorizontalAlignment="Left" Height="24" Margin="16,0,0,0" VerticalAlignment="Center" Width="74" Click="buttonInitialize_Click"/>
+        </Grid>
+
+        <!-- Key instructions -->
+
+        <Grid x:Name="gridInstructions" HorizontalAlignment="Center" Height="65" Margin="1,0" VerticalAlignment="Top" Width="392" Grid.Row="5" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="labelNextKey" Content="Right :" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" Margin="0,-5" VerticalAlignment="Center" HorizontalContentAlignment="Right"/>
+            <Label x:Name="labelPreviousKey" Content="Left :" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" Margin="0,-5" VerticalAlignment="Center" HorizontalContentAlignment="Right"/>
+            <Label x:Name="labelIncreaseKey" Content="Up :" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" Margin="0,-5" VerticalAlignment="Center" HorizontalContentAlignment="Right"/>
+            <Label x:Name="labelDecreaseKey" Content="Down :" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right" Margin="0,-5" VerticalAlignment="Center" HorizontalContentAlignment="Right"/>
+            <Label x:Name="labelNextInstruction" Content="Next group" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" Margin="0,-5" VerticalAlignment="Center" HorizontalContentAlignment="Left"/>
+            <Label x:Name="labelPreviousInstruction" Content="Previous group" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Margin="0,-5" VerticalAlignment="Center" HorizontalContentAlignment="Left"/>
+            <Label x:Name="labelIncreaseInstruction" Content="Increase value" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Margin="0,-5" VerticalAlignment="Center" HorizontalContentAlignment="Left"/>
+            <Label x:Name="labelDecreaseInstruction" Content="Decrease value" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" Margin="0,-5" VerticalAlignment="Center" HorizontalContentAlignment="Left"/>
+            <Label x:Name="labelToggleKey" Content="Space :" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" Margin="0,-5" VerticalAlignment="Center" HorizontalContentAlignment="Right"/>
+            <Label x:Name="labelInsertKey" Content="Insert :" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Right" Margin="0,-5" VerticalAlignment="Center" HorizontalContentAlignment="Right"/>
+            <Label x:Name="labelAppendKey" Content="A :" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Right" Margin="0,-5" VerticalAlignment="Center" HorizontalContentAlignment="Right"/>
+            <Label x:Name="labelDeleteKey" Content="Delete :" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Right" Margin="0,-5" VerticalAlignment="Center" HorizontalContentAlignment="Right"/>
+            <Label x:Name="labelToggleInstruction" Content="Toggle incline/speed" Grid.Column="3" Grid.Row="0" HorizontalAlignment="Left" Margin="0,-5" VerticalAlignment="Center" HorizontalContentAlignment="Left"/>
+            <Label x:Name="labelInsertInstruction" Content="Add group before" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Left" Margin="0,-5" VerticalAlignment="Center" HorizontalContentAlignment="Left"/>
+            <Label x:Name="labelAppendInstruction" Content="Add group after" Grid.Column="3" Grid.Row="2" HorizontalAlignment="Left" Margin="0,-5" VerticalAlignment="Center" HorizontalContentAlignment="Left"/>
+            <Label x:Name="labelDeleteInstruction" Content="Delete group" Grid.Column="3" Grid.Row="3" HorizontalAlignment="Left" Margin="0,-5" VerticalAlignment="Center" HorizontalContentAlignment="Left"/>
+        </Grid>
+
+        <!-- Workout display -->
+
+        <Canvas x:Name="editorWorkoutDisplayCanvas" HorizontalAlignment="Center" Height="120" Margin="11,5" Grid.Row="6" VerticalAlignment="Center" Width="372" Background="Black" ClipToBounds="True" KeyDown="editorWorkoutDisplayCanvas_KeyDown" Focusable="True" MouseWheel="editorWorkoutDisplayCanvas_MouseWheel" MouseLeftButtonDown="editorWorkoutDisplayCanvas_MouseLeftButtonDown" Grid.ColumnSpan="2">
+        </Canvas>
+
+        <!-- Cosmetic objects -->
+
+        <Separator Height="1" Margin="0,0,0,0" VerticalAlignment="Top" Background="#FF3B4F81" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <Separator Height="1" Margin="0,0,0,0" VerticalAlignment="Top" Background="#FF3B4F81" Grid.Row="2" Grid.ColumnSpan="2"/>
+        <Separator Height="1" Margin="0,0,0,0" VerticalAlignment="Top" Background="#FF3B4F81" Grid.Row="4" Grid.ColumnSpan="2"/>
+
+        <!-- Status bar -->
+
+        <Label x:Name="labelWorkoutEditorStatus" Content="All is good!" Margin="0,0,0,8" Grid.Row="7" VerticalAlignment="Bottom" Background="#FFFDFAFA" BorderBrush="#FF3B4F81" Foreground="#FF3B4F81" Grid.ColumnSpan="2"/>
+
+    </Grid>
+</Window>
