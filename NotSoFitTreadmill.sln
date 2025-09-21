@@ -5,12 +5,6 @@ VisualStudioVersion = 17.14.36408.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotSoFitTreadmill", "NotSoFitTreadmill.csproj", "{160A8246-5174-4BF3-AFE7-656C757B6E04}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
-	ProjectSection(SolutionItems) = preProject
-		InstallerCreationInstructionsFromGemini_09212025.docx = InstallerCreationInstructionsFromGemini_09212025.docx
-		InstallerCreationTipsFromGemini_09212025.docx = InstallerCreationTipsFromGemini_09212025.docx
-	EndProjectSection
-EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "NotSoFitTreadmillInstaller", "NotSoFitTreadmillInstaller\NotSoFitTreadmillInstaller.vdproj", "{8313AE82-9E06-529D-F401-1E5B7AFE3660}"
 EndProject
 Global
