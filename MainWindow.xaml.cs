@@ -25,8 +25,8 @@
 //    WorkoutEditor: class that enables the graphical creation, editing, and saving of treadmill workouts.
 //
 // Development environment:
-//   Microsoft Visual Studio Community 2022 (64-bit) Version 17.10.5
-//   C# Tools 4.10.0
+//   Microsoft Visual Studio Community 2022 (64-bit) Version 17.14.5
+//   C# Tools 4.14.0
 //
 // Required libraries:
 //
