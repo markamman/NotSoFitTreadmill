@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NotSoFitTreadmill"
         mc:Ignorable="d"
-        Title="Not-So-Fit Treadmill 2.2" MinWidth="400" MinHeight="520" MaxWidth="800" MaxHeight="1040" d:DesignWidth="400" d:DesignHeight="520" Width="400" Height="520" 
+        Title="Not-So-Fit Treadmill 3.0" MinWidth="400" MinHeight="520" MaxWidth="800" MaxHeight="1040" d:DesignWidth="400" d:DesignHeight="520" Width="400" Height="520" 
         HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFCCD5F0" ResizeMode="CanMinimize" 
         Icon="NotSoFitTreadmillIcon5.ico" Closing="windowMain_Closing" >
 

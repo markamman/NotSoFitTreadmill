@@ -15,6 +15,9 @@
 //    Method to install: SolutionExplorer -> Right click References -> Select Manage NUGet Packages ...
 //    Search for the desired library and then press Install.)
 //
+//  Starting with version 3.0, none of the Microsoft Speech Platform Runtime 11 installation is needed.
+//  Instead, the System.Speech.dll is used. This DLL is part of the .NET Framework. See the instructions
+//  in the following section for details on how to use System.Speech.
 //  Software Development Kit (SDK) for the Microsoft Speech Platform Runtime 11:
 //    x86_MicrosoftSpeechPlatformSDK\MicrosoftSpeechPlatformSDK.msi
 //  Microsoft Speech Platform - Runtime (Version 11):
@@ -28,9 +31,17 @@
 //    SolutionExplorer -> Right click References -> Add Reference ... -> Browse ...
 //    Select C:\ProgramFiles (x86)\Microsoft SDKs\Speech\v11.0\Assembly\Microsoft.Speech.dll
 //
+//  Microsoft built-in Speech Recognition engine:
+//    Sarting with version 3.0 of NotSoFitTreadmill, this is used rather than the Microsoft Speech
+//    Platform Runtime 11. This engine is part of the .NET Framework System.Speech.dll. To use this DLL,
+//    add a reference to it: SolutionExplorer -> Right click References -> Add Reference ... -> Assemblies
+//    -> Framework -> Select System.Speech.
+//
 // History:
 //   See the notes for the individual methods below.
 //   05-09-2020, MA: First version completed.
+//   09-21-2025, MA: Updated to use System.Speech instead of Microsoft.Speech. Only
+//     the using statements changed.
 //
 //*****************************************************************************
 //*****************************************************************************
@@ -41,8 +52,9 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.Speech.Recognition;
-using Microsoft.Speech.Synthesis;
+//using Microsoft.Speech.Recognition;
+//using Microsoft.Speech.Synthesis;
+using System.Speech.Recognition;
 using System.Globalization;
 using NAudio;
 using NAudio.Wave;

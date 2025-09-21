@@ -34,6 +34,9 @@
 //     Method to install: SolutionExplorer -> Right click References -> Select Manage NUGet Packages...
 //     Search for the desired library and then press Install.
 //
+//   Starting with version 3.0, none of the Microsoft Speech Platform Runtime 11 installation is needed.
+//   Instead, the System.Speech.dll is used. This DLL is part of the .NET Framework. See the instructions
+//   in the following section for details on how to use System.Speech.
 //   Software Development Kit (SDK) for the Microsoft Speech Platform Runtime 11:
 //     x86_MicrosoftSpeechPlatformSDK\MicrosoftSpeechPlatformSDK.msi
 //   Microsoft Speech Platform - Runtime (Version 11):
@@ -46,6 +49,12 @@
 //     After the installation, add a reference to the Microsoft.Speech.dll:
 //     SolutionExplorer -> Right click References -> Add Reference ... -> Browse...
 //     Select C:\ProgramFiles (x86)\Microsoft SDKs\Speech\v11.0\Assembly\Microsoft.Speech.dll
+//
+//   Microsoft built-in Speech Recognition engine:
+//     Sarting with version 3.0 of NotSoFitTreadmill, this is used rather than the Microsoft Speech
+//     Platform Runtime 11. This engine is part of the .NET Framework System.Speech.dll. To use this DLL,
+//     add a reference to it: SolutionExplorer -> Right click References -> Add Reference ... -> Assemblies
+//     -> Framework -> Select System.Speech.
 //
 //   Microsoft Visual Studio Installer Projects (MVSIP):
 //     To create the software installer NotSoFitTreadmillInstaller, the MVSIP extension must be added 
@@ -62,7 +71,7 @@
 //       Right click the new WPF Toolkit -> Select Choose Items... -> Select the DLLs
 //       ...\packages\Extended.Wpf.Toolkit*\lib\*\*.dll
 //
-// Last modified: 08-09-2024
+// Last modified: 09-21-2025
 //   
 // Version history:
 //   See the notes for the individual methods below.
@@ -83,6 +92,14 @@
 //     Updated to Visual Studio 2022. The Microsoft Visual Studio Installer Projects extension
 //     was changed from Microsoft Visual Studio Installer Projects to Microsoft Visual Studio
 //     Installer Projects 2022. Basic functionality tested. No code changes made.
+//   3.0, 09-21-2025, MA:
+//     Changed the voice command processing from using the Microsoft Speech Platform Runtime 11
+//     to using the built-in Microsoft Speech Recognition engine. This change eliminated the
+//     need to install the Microsoft Speech Platform Runtime 11 and associated language files.
+//     Started using GitNub for version control. The files are located in the cloud and a local
+//     repository at c:\Users\marka\source\repos\markamman\NotSoFitTreadmill.
+//     Recreated the installer NotSoFitTreadmillInstaller and placed the installer folder within
+//     the NotSoFitTreadmill folder.
 //
 //*****************************************************************************
 //*****************************************************************************
