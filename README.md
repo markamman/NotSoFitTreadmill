@@ -1,6 +1,7 @@
 # Not-So-Fit Treadmill
 
 This is a Windows Presentation Foundation (WPF) desktop application for controlling an iFit-compatible treadmill using audio commands. It allows for manual control, running pre-defined workouts, and voice command operation.
+**Note:** This is a personal project and is not actively maintained.
 
 ## Features
 
