@@ -46,13 +46,17 @@ The application loads workout files (`.wrk`) from a default directory: `c:\NotSo
 
 ### Voice Commands
 
-Voice commands can be enabled from the `Voice` menu. Once enabled, you can use commands such as:
-*   "Start" / "Resume"
-*   "Pause" / "Stop"
-*   "Increase speed" / "Decrease speed"
-*   "Increase incline" / "Decrease incline"
-*   "Set speed to 5"
-*   "Set incline to 8"
+Voice commands can be enabled from the `Voice` menu. All commands must start with the keyword "treadmill" or "tea".
+
+Examples:
+*   `treadmill start`
+*   `treadmill stop`
+*   `treadmill up` (increases incline)
+*   `treadmill down` (decreases incline)
+*   `treadmill faster`
+*   `treadmill slower`
+*   `treadmill speed one`
+*   `treadmill incline one`
 
 ## Author
 
@@ -68,3 +72,6 @@ Voice commands can be enabled from the `Voice` menu. Once enabled, you can use c
 *   **1.2.2, 05-19-2020:** Installer added.
 *   **1.1.0, 05-14-2020:** Added user selection of audio output device and voice command control.
 *   **1.0.0, 04-22-2020:** First fully functional version completed.
+
+---
+*This README was authored by jules.*
