@@ -71,7 +71,7 @@
 //       Right click the new WPF Toolkit -> Select Choose Items... -> Select the DLLs
 //       ...\packages\Extended.Wpf.Toolkit*\lib\*\*.dll
 //
-// Last modified: 09-21-2025
+// Last modified: 09-22-2025
 //   
 // Version history:
 //   See the notes for the individual methods below.
@@ -92,7 +92,7 @@
 //     Updated to Visual Studio 2022. The Microsoft Visual Studio Installer Projects extension
 //     was changed from Microsoft Visual Studio Installer Projects to Microsoft Visual Studio
 //     Installer Projects 2022. Basic functionality tested. No code changes made.
-//   3.0, 09-21-2025, MA:
+//   3.0, 09-22-2025, MA:
 //     Changed the voice command processing from using the Microsoft Speech Platform Runtime 11
 //     to using the built-in Microsoft Speech Recognition engine. This change eliminated the
 //     need to install the Microsoft Speech Platform Runtime 11 and associated language files.
@@ -100,6 +100,10 @@
 //     repository at c:\Users\marka\source\repos\markamman\NotSoFitTreadmill.
 //     Recreated the installer NotSoFitTreadmillInstaller and placed the installer folder within
 //     the NotSoFitTreadmill folder.
+//     Used Google Jules to write a README.md file for the GitHub repository. Made the repository
+//     public rather than private.
+//     Added the NotSoFitTreadmillWorkouts folder along with workouts and the
+//     NotSoFitTreadmill.cfg to the repository.
 //
 //*****************************************************************************
 //*****************************************************************************
