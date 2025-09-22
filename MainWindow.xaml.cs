@@ -96,7 +96,7 @@
 //     Changed the voice command processing from using the Microsoft Speech Platform Runtime 11
 //     to using the built-in Microsoft Speech Recognition engine. This change eliminated the
 //     need to install the Microsoft Speech Platform Runtime 11 and associated language files.
-//     Started using GitNub for version control. The files are located in the cloud and a local
+//     Started using GitHub for version control. The files are located in the cloud and in a local
 //     repository at c:\Users\marka\source\repos\markamman\NotSoFitTreadmill.
 //     Recreated the installer NotSoFitTreadmillInstaller and placed the installer folder within
 //     the NotSoFitTreadmill folder.
