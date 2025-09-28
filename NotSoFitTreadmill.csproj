@@ -150,8 +150,28 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Icons\iFitTreadmillIcon.cvx" />
     <None Include="InstallerCreationInstructionsFromGemini_09212025.docx" />
     <None Include="InstallerCreationTipsFromGemini_09212025.docx" />
+    <None Include="NotSoFitTreadmillWorkouts\Incline Interval Speed 1.wrk" />
+    <None Include="NotSoFitTreadmillWorkouts\Incline Interval Speed 2.wrk" />
+    <None Include="NotSoFitTreadmillWorkouts\Incline Interval Speed 3.wrk" />
+    <None Include="NotSoFitTreadmillWorkouts\Incline Interval Speed 4.wrk" />
+    <None Include="NotSoFitTreadmillWorkouts\Incline Pyramid Speed 1.wrk" />
+    <None Include="NotSoFitTreadmillWorkouts\Incline Pyramid Speed 2.wrk" />
+    <None Include="NotSoFitTreadmillWorkouts\Incline Pyramid Speed 3.wrk" />
+    <None Include="NotSoFitTreadmillWorkouts\Incline Pyramid Speed 4.wrk" />
+    <None Include="NotSoFitTreadmillWorkouts\Interval Medium Easy 1.wrk" />
+    <None Include="NotSoFitTreadmillWorkouts\Interval Short Easy 1.wrk" />
+    <None Include="NotSoFitTreadmillWorkouts\NotSoFitTreadmill.cfg" />
+    <None Include="NotSoFitTreadmillWorkouts\Rolling Hills Speed 1.wrk" />
+    <None Include="NotSoFitTreadmillWorkouts\Rolling Hills Speed 2.wrk" />
+    <None Include="NotSoFitTreadmillWorkouts\Rolling Hills Speed 3.wrk" />
+    <None Include="NotSoFitTreadmillWorkouts\Rolling Hills Speed 4.wrk" />
+    <None Include="NotSoFitTreadmillWorkouts\Sawtooth Speed 1.wrk" />
+    <None Include="NotSoFitTreadmillWorkouts\Sawtooth Speed 2.wrk" />
+    <None Include="NotSoFitTreadmillWorkouts\Sawtooth Speed 3.wrk" />
+    <None Include="NotSoFitTreadmillWorkouts\Sawtooth Speed 4.wrk" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -178,6 +198,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="NotSoFitTreadmillIcon5.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\iFitTreadmillIcon.ico" />
+    <Resource Include="Icons\iFitTreadmillIcon.jpg" />
+    <Resource Include="Icons\iFitTreadmillIcon.png" />
+    <Resource Include="Icons\iFitTreadmillIcon1.ico" />
+    <Resource Include="Icons\iFitTreadmillIcon2.ico" />
+    <Resource Include="Icons\iFitTreadmillIcon2.jpg" />
+    <Resource Include="Icons\iFitTreadmillIcon3.jpg" />
+    <Resource Include="Icons\iFitTreadmillIcon4.jpg" />
+    <Resource Include="Icons\iFitTreadmillIcon5.jpg" />
+    <Resource Include="Icons\iFitTreadmillIcon6.jpg" />
+    <Resource Include="Icons\NotSoFitTreadmillIcon3.ico" />
+    <Resource Include="Icons\NotSoFitTreadmillIcon4.ico" />
+    <Resource Include="Icons\NotSoFitTreadmillIcon5.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
